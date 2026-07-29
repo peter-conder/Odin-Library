@@ -31,6 +31,3 @@ addBookToLibrary("thing", "owjncw", "pages", "read", "id");
 addBookToLibrary("thing", "owjncw", "pages", "read", "id");
 console.log(library);
 
-for (const property in library.1) {
-    console.log(`${property}: ${object[property]}`);
-}
