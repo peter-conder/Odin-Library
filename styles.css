@@ -2,6 +2,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: lightgray;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#title {
+    font-size: 60px;
 }
 
 #displayBooks {
@@ -11,22 +17,31 @@ body {
     align-content: baseline;
     justify-content: center;
     width: 60vw;
-    height: 40vw;
+    height: fit-content;
     flex-direction: row;
-    border: solid red;
-    gap: 10px;
-    padding: 10px;
+    gap: 2em;
+    padding: 2em;
 }
 
 #displayBooks div {
     display: flex;
+    background-color: white;
+    box-shadow: 2px 2px 2px black;
     word-break: break-word;
     align-items: center;
     justify-items: center;
     padding: 10px;
     text-wrap: wrap;
-    border: solid;
-    width: 30%;
+    width: 25%;
     height: 20%;
+    border-radius: 10px;
 }
 
+#addButton {
+    width: 5%;
+    aspect-ratio: 1;
+    border-radius: 50px;
+    border: none;
+    box-shadow: 2px 2px 2px black;
+    font-size: 50px;
+}
