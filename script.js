@@ -46,7 +46,9 @@ function displayBooks() {
         let currentBook = library.at(i);
         let bookString = JSON.stringify(currentBook);
         console.log(bookString);
+       
         const display = document.createElement("div");
+        display.classList.add("bookDisplay");
         const node = document.createTextNode(bookString);
         display.appendChild(node);
         const libraryDisplay = document.getElementById("displayBooks");
