@@ -33,14 +33,26 @@ function addBookToLibrary(title, author, pages, read, id) {
 addBookToLibrary("book1", "you", "12312", "false", "id");
 addBookToLibrary("book2", "owjncw", "6767", "false", "id");
 addBookToLibrary("book3", "me", "1812", "true", "id");
+addBookToLibrary("book1", "you", "12312", "false", "id");
+addBookToLibrary("book2", "owjncw", "6767", "false", "id");
+addBookToLibrary("book3", "me", "1812", "true", "id");
+
 
 //console.log(library);
 
 function displayBooks() {
     let i = 0;
     for (let step = 0; step < library.length; step++) {
-        console.log(library.at(i));
+        let currentBook = library.at(i);
+        let bookString = JSON.stringify(currentBook);
+        console.log(bookString);
+        const display = document.createElement("div");
+        const node = document.createTextNode(bookString);
+        display.appendChild(node);
+        const libraryDisplay = document.getElementById("displayBooks");
+        libraryDisplay.appendChild(display);
         i++;
-    }
+    };
     };
 displayBooks();
+
