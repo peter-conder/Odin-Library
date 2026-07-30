@@ -36,7 +36,7 @@ function displayBooks() {
     let i = 0;
     for (let step = 0; step < library.length; step++) {
         let currentBook = library.at(i);
-        let bookString = `${currentBook.title} by: ${currentBook.author}, ${currentBook.pages} pages long,  Read: ${currentBook.read}, ID: ${currentBook.id}`;
+        let bookString = `${currentBook.title} by: ${currentBook.author}, ${currentBook.pages} pages long,  Read: ${currentBook.read}, ID: ${currentBook.identifier}`;
         const display = document.createElement("div");
         display.classList.add("bookDisplay");
         const node = document.createTextNode(bookString);

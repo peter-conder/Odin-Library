@@ -26,7 +26,6 @@ body {
 #displayBooks div {
     display: flex;
     background-color: white;
-    box-shadow: 2px 2px 2px black;
     word-break: break-word;
     align-items: center;
     justify-items: center;
@@ -42,6 +41,13 @@ body {
     aspect-ratio: 1;
     border-radius: 50px;
     border: none;
-    box-shadow: 2px 2px 2px black;
     font-size: 50px;
+}
+
+#displayBooks div:hover {
+    box-shadow: 2px 2px 2px black;
+}
+
+#addButton:hover {
+    box-shadow: 2px 2px 2px black;
 }
