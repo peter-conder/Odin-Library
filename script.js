@@ -1,17 +1,9 @@
 /** Pseudocode
- * Make book constructor
- * Store books in array
- * Function
-     * create a book from arguments
-     * store book in array
- * Every book should have a unique id
- * 
- * 
- *
- *  
+ * How to make titles readable? probably by filtering out all the elements that make it ugly
+ * split @ identifier
+ * add class to identifier, style it so it's a bit smaller
+ * filter out [""], [:], [,]
  * */
-
-
 
 const library = [];
 
@@ -44,9 +36,7 @@ function displayBooks() {
     let i = 0;
     for (let step = 0; step < library.length; step++) {
         let currentBook = library.at(i);
-        let bookString = JSON.stringify(currentBook);
-        console.log(bookString);
-       
+        let bookString = `${currentBook.title} by: ${currentBook.author}, ${currentBook.pages} pages long,  Read: ${currentBook.read}, ID: ${currentBook.id}`;
         const display = document.createElement("div");
         display.classList.add("bookDisplay");
         const node = document.createTextNode(bookString);
@@ -57,4 +47,3 @@ function displayBooks() {
     };
     };
 displayBooks();
-
