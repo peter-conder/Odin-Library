@@ -1,10 +1,3 @@
-/** Pseudocode
- * How to make titles readable? probably by filtering out all the elements that make it ugly
- * split @ identifier
- * add class to identifier, style it so it's a bit smaller
- * filter out [""], [:], [,]
- * */
-
 const library = [];
 
 Book.prototype
@@ -47,3 +40,19 @@ function displayBooks() {
     };
     };
 displayBooks();
+
+/** Create form onclick:
+ *  Have form fully loaded in the HTML but hidden
+ * When button is clicked, form shows
+ * When submit button is clicked, form sumbits information to the DOM and is then hidden
+ * 
+ * Can do this with the hidden attribute. button toggles the hidden attribute on the form. That's it.
+ */
+
+const button = document.getElementById("addButton");
+const form = document.getElementById("bookForm")
+button.addEventListener("click", () => {
+    if (form.style.display === "none") {
+        form.style.display = 'flex';}
+    else form.style.display = 'none';
+    });
