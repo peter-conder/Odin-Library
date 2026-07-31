@@ -38,7 +38,7 @@ body {
 }
 
 #addButton {
-    width: 5%;
+    width: 75px;
     aspect-ratio: 1;
     border-radius: 50px;
     border: none;
@@ -46,33 +46,53 @@ body {
 }
 
 #displayBooks div:hover {
-    box-shadow: 2px 2px 2px black;
+    box-shadow: 2px 2px 2px gray;
 }
 
 #addButton:hover {
-    box-shadow: 2px 2px 2px black;
+    box-shadow: 3px 3px 3px gray;
+    background-color: orangered;
+    color: white;
 }
 
 #formContainer {
     display: flex;
-    width: 80%;
+    background-color: white;
+    width: 30%;
     height: 50%;
-    justify-content: space-evenly;
+    justify-content: center;
+    border-radius: 50px;
+    margin-top: 10%;
+}
+
+#formTitle {
+    margin-top: -10px;
+    margin-bottom: -10px;
 }
 
 
 #bookForm {
     padding: 30px;
     display: none;
+    font-weight: 700;
+    font-size: large;
     flex-direction: column;
     gap: 20px;
+    align-items: center;
 }
 
 #submit {
-    width: 40px;
+    width: 75px;
+    height: 75px;
     aspect-ratio: 1;
     border-radius: 50px;
     border: none;
-    font-size: large;
-    font-weight: 700;
+    font-size: 50px;
+}
+
+input {
+    border-radius: 10px;
+    height: 2em;
+    width: 18em;
+    border-width: 1px;
 }
