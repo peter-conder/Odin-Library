@@ -64,4 +64,15 @@ body {
 #bookForm {
     padding: 30px;
     display: none;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#submit {
+    width: 40px;
+    aspect-ratio: 1;
+    border-radius: 50px;
+    border: none;
+    font-size: large;
+    font-weight: 700;
 }
