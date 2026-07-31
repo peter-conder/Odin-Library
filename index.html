@@ -14,7 +14,7 @@
 
 
         <div id="formContainer">
-            <form id="bookForm" action="" method="get">
+            <form id="bookForm" action="" method="GETo">
                 <h3 id="formTitle">Add a Book</h3>
                 <div class="formClass">
                     <label for="bookTitle">Title</label>
@@ -23,16 +23,16 @@
 
                 <div class="formClass">
                     <label for="author">Author</label>
-                    <input type="text" name="author" id="author" required>
+                    <input type="text" name="author" id="bookAuthor" required>
                 </div>
 
                 <div class="formClass">
                     <label for="pages">Pages</label>
-                    <input type="number" name="pages" id="pages" required>
+                    <input type="number" name="pages" id="bookPages" required>
                 </div>
 
                 <div >
-                    <input type="submit" value="+" id="submit">
+                    <button type="submit" id="submit">+</button>
                 </div>
             </form>
         </div>

@@ -51,13 +51,17 @@ addButton.addEventListener("click", () => {
     }
 });
 
-const submitButton = document.getElementById('submit');
-submitButton.addEventListener('submit', () => {
-    event.preventDefault();
-    alert('it works');
+function submitBook(event) {
     let bookTitle = document.getElementById('bookTitle').value;
-    let bookAuthor = document.getElementById('author').value;
-    let bookPages = document.getElementById('pages').value;
+    let bookAuthor = document.getElementById('bookAuthor').value;
+    let bookPages = document.getElementById('bookPages').value;
 
     console.log(bookTitle);
-})
+    addBookToLibrary(bookTitle, bookAuthor, bookPages);
+    displayBooks();
+    event.preventDefault();
+}
+
+const submitButton = document.getElementById('submit');
+submitButton.addEventListener('click', submitBook);
+
