@@ -1,14 +1,5 @@
 const library = [];
 
-/*
-const bookPrototype = {
-    title: title,
-    author: author,
-    pages: pages,
-    read: false
-};
-*/
-
 function Book(title, author, pages, read, identifier) {
     this.title = title;
     this.author = author;
@@ -24,19 +15,37 @@ function addBookToLibrary(title, author, pages) {
 
 function displayBooks() {
     let i = 0;
+
+    //remove all previous books from array
     let removeDivs = document.querySelectorAll(".bookDisplay");
     removeDivs.forEach(element => element.remove());
+
+    //loops through array and makes a new element for each item in array
     for (let step = 0; step < library.length; step++) {
         let currentBook = library.at(i);
-        let bookString = `${currentBook.title} by: ${currentBook.author}, ${currentBook.pages} pages long,  Read: ${currentBook.read}, ID: ${currentBook.identifier}`;
+
+        let bookString = `${currentBook.title} by ${currentBook.author}, ${currentBook.pages} pages long,  Read: ${currentBook.read}, ID: ${currentBook.identifier}`;
+
+        //add name into DOM
         const display = document.createElement("div");
         display.classList.add("bookDisplay");
+
         const node = document.createTextNode(bookString);
         display.appendChild(node);
+
+        const removeButton = document.createElement("button");
+        removeButton.textContent = 'Remove';
+        display.appendChild(removeButton);
+
+        const readButton = document.createElement("button");
+        readButton.textContent = 'Read';
+        display.appendChild(readButton);
+
         const libraryDisplay = document.getElementById("displayBooks");
         libraryDisplay.appendChild(display);
         i++;
-    };
+
+        };
     };
 
 
@@ -56,7 +65,6 @@ function submitBook(event) {
     let bookAuthor = document.getElementById('bookAuthor').value;
     let bookPages = document.getElementById('bookPages').value;
 
-    console.log(bookTitle);
     addBookToLibrary(bookTitle, bookAuthor, bookPages);
     displayBooks();
     event.preventDefault();
@@ -64,4 +72,3 @@ function submitBook(event) {
 
 const submitButton = document.getElementById('submit');
 submitButton.addEventListener('click', submitBook);
-

@@ -26,6 +26,8 @@ body {
 
 #displayBooks div {
     display: flex;
+    flex-direction: column;
+    gap: 10px;
     background-color: white;
     word-break: break-word;
     align-items: center;
@@ -95,4 +97,19 @@ input {
     height: 2em;
     width: 18em;
     border-width: 1px;
+}
+
+.removeButton {
+    display: flex;
+    background-color: gray;
+    color: white;
+    justify-content: center;
+    align-content: center;
+    border-radius: 30px;
+    border: none;    
+}
+
+.removeButton:hover {
+    background-color: orangered;
+    box-shadow: 2px 2px 2px gray;
 }
