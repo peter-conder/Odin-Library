@@ -8,29 +8,61 @@ function Book(title, author, pages, read, identifier) {
     this.identifier = self.crypto.randomUUID();
 }
 
+
 function addBookToLibrary(title, author, pages) {
     const book = new Book(title, author, pages);
     library.push(book);
 }
 
-function assignButtons(parentDisplay) {
+function assignButtons(parentDisplay, parentObject, currentObject, currentNode) {
     const removeButton = document.createElement('button');
     removeButton.class = 'remove';
     removeButton.textContent = '-'
     parentDisplay.appendChild(removeButton);
     removeButton.addEventListener("click", () => {
-        //code to remove or hide parent display goes here
+        parentDisplay.remove();
     })
     const readButton = document.createElement('button');
-    readButton.class = 'read';
+    readButton.id = 'read';
     readButton.textContent = 'Read';
     parentDisplay.appendChild(readButton);
-    readButton.addEventListener("click",() => {
-        //code to set false to true goes here
+    readButton.addEventListener('click', ()=>{
+        if (parentObject.read === false) {
+        parentObject.read = true;
+        bookString = `${currentObject.title} by ${currentObject.author}, ${currentObject.pages} pages,  Read: ${currentObject.read}, ID: ${currentObject.identifier}`;
+        currentNode.textContent = bookString;
+    } else if (parentObject.read === true) {
+        parentObject.read = false;
+        bookString = `${currentObject.title} by ${currentObject.author}, ${currentObject.pages} pages,  Read: ${currentObject.read}, ID: ${currentObject.identifier}`;
+        currentNode.textContent = bookString;
+
+    }
     })
 }
 
+/*
+    let childDisplay = document.querySelectorAll('.bookDisplay > #string');
+    let newString = Array.from(childDisplay);
+    console.log(newString);
 
+    if (parentDisplay.textContent.includes("Read: false")) {
+        readButton.addEventListener("click",() => {
+        let subString = parentDisplay.textContent;  
+        let replacedString = subString.replace("Read: false", "Read: true");
+        parentDisplay.textContent = replacedString;
+
+    })
+    } else if (parentDisplay.textContent.includes("Read: true")) {
+        readButton.addEventListener("click",() => {
+        let subString = parentDisplay.textContent;  
+        let replacedString = subString.replace("Read: true", "Read: false");
+        console.log(replacedString);
+        parentDisplay.textContent = replacedString;
+        })
+    
+}}
+
+*/
 
 function displayBooks() {
     let i = 0;
@@ -42,13 +74,14 @@ function displayBooks() {
         let currentBook = library.at(i);
             let bookString = `${currentBook.title} by ${currentBook.author}, ${currentBook.pages} pages,  Read: ${currentBook.read}, ID: ${currentBook.identifier}`;
         const display = document.createElement("div");
-            display.classList.add("bookDisplay");
+            display.class = "bookDisplay";
         const node = document.createTextNode(bookString);
+        node.id = 'string';
             display.appendChild(node);
         const libraryDisplay = document.getElementById("displayBooks");
             libraryDisplay.appendChild(display);
         
-        assignButtons(display);
+        assignButtons(display, currentBook, currentBook, node);
         i++;
         };
     };
